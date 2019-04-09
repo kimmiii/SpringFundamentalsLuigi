@@ -11,7 +11,7 @@
 	</form>
 	<ul th:if="${pizzas} != null">
 		<li th:each="pizza:${pizzas}" th:object="${pizza}"
-			th:text="|*{naam} &euro: *{prijs}|"></li>
+			th:text="|*{naam} euro: *{prijs}|"></li>
 	</ul>
 </body>
 </html>

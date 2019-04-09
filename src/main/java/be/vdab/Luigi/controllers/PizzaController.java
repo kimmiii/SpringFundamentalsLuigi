@@ -2,6 +2,9 @@ package be.vdab.Luigi.controllers;
 
 
 import java.math.BigDecimal;
+
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -52,6 +55,7 @@ class PizzaController {
 				.addObject("prijzen", pizzaService.findUniekePrijzen());
 	}
 	
+	@Valid
 	@GetMapping("vantotprijs/form")
 	ModelAndView vanTotPrijsForm() {
 		return new ModelAndView("vantotprijs")
