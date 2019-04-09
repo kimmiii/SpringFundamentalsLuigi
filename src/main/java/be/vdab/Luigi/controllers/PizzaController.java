@@ -55,7 +55,6 @@ class PizzaController {
 				.addObject("prijzen", pizzaService.findUniekePrijzen());
 	}
 	
-	@Valid
 	@GetMapping("vantotprijs/form")
 	ModelAndView vanTotPrijsForm() {
 		return new ModelAndView("vantotprijs")
@@ -63,7 +62,7 @@ class PizzaController {
 	}
 	
 	@GetMapping("vantotprijs")
-	ModelAndView vanTotPrijs(VanTotPrijsForm form, Errors errors) {
+	ModelAndView vanTotPrijs(@Valid VanTotPrijsForm form, Errors errors) {
 		ModelAndView modelAndView = new ModelAndView("vantotprijs");
 		if (errors.hasErrors()) {
 			return modelAndView;
