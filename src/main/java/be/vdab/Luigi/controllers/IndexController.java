@@ -14,7 +14,6 @@ import be.vdab.Luigi.domain.Persoon;
 @Controller
 @RequestMapping("/")
 class IndexController{
-	
 	private final AtomicInteger aantalKeerBekeken = new AtomicInteger();
 	private String boodschap() {
 		int uur = LocalTime.now().getHour();
@@ -25,7 +24,7 @@ class IndexController{
 		}
 		return "avond";
 	}
-	
+
 	@GetMapping
 	ModelAndView index() {
 		ModelAndView modelAndView = new ModelAndView("index", "boodschap", boodschap());
