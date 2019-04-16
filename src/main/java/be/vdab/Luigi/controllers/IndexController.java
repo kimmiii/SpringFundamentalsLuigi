@@ -1,5 +1,6 @@
 package be.vdab.Luigi.controllers;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -29,7 +30,7 @@ class IndexController{
 	ModelAndView index() {
 		ModelAndView modelAndView = new ModelAndView("index", "boodschap", boodschap());
 		modelAndView.addObject("zaakvoerder", new Persoon("Luigi", "Peperone", 7, true, 
-				new Adres("Grote markt", "3", 9700, "Oudenaarde")));
+				new Adres("Grote markt", "3", 9700, "Oudenaarde"), LocalDate.of(1982, 04, 27)));
 		modelAndView.addObject("aantalKeerBekeken",aantalKeerBekeken.incrementAndGet());
 		return modelAndView;
 	}

@@ -6,12 +6,15 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PositiveOrZero;
 
+import org.springframework.format.annotation.NumberFormat;
+
 public class Pizza {
 	private final long id;
 	@NotBlank
 	private final String naam;
 	@NotNull
 	@PositiveOrZero
+	@NumberFormat(pattern="0.00")
 	private final BigDecimal prijs;
 	private final boolean pikant;
 	
